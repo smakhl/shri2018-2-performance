@@ -5,6 +5,7 @@
   "main": "script.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "deploy": "node gh-pages.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
