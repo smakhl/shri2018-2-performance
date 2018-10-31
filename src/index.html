@@ -380,7 +380,10 @@
         </div>
     </div>
     <script src="scripts.js" async></script>
-    <link rel="stylesheet" href="./fonts/pt_sans.css">
+    <link rel="preload" href="./fonts/pt_sans.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="./fonts/pt_sans.css">
+    </noscript>
 </body>
 
 </html>
