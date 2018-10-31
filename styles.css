@@ -1,4 +1,43 @@
-
+@font-face {
+  font-family: "PT Sans";
+  src: url(fonts/subset-PTSans-Regular.eot);
+  src: local("PT Sans"), local("PTSans-Regular"),
+    url(fonts/subset-PTSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(fonts/subset-PTSans-Regular.woff2) format("woff2"),
+    url(fonts/subset-PTSans-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url(fonts/subset-PTSans-Narrow.eot);
+  src: local("PT Sans Narrow"), local("PTSans-Narrow"),
+    url(fonts/subset-PTSans-Narrow.eot?#iefix) format("embedded-opentype"),
+    url(fonts/subset-PTSans-Narrow.woff2) format("woff2"),
+    url(fonts/subset-PTSans-Narrow.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url(fonts/subset-PTSans-Bold.eot);
+  src: local("PT Sans Bold"), local("PTSans-Bold"),
+    url(fonts/subset-PTSans-Bold.eot?#iefix) format("embedded-opentype"),
+    url(fonts/subset-PTSans-Bold.woff2) format("woff2"),
+    url(fonts/subset-PTSans-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url(fonts/subset-PTSans-NarrowBold.eot);
+  src: local("PT Sans Narrow Bold"), local("PTSans-NarrowBold"),
+    url(fonts/subset-PTSans-NarrowBold.eot?#iefix) format("embedded-opentype"),
+    url(fonts/subset-PTSans-NarrowBold.woff2) format("woff2"),
+    url(fonts/subset-PTSans-NarrowBold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
 
 .link_active,
 .link:hover {
@@ -328,44 +367,4 @@
   to {
     transform: scale(1);
   }
-}
-@font-face {
-  font-family: "PT Sans";
-  src: url(fonts/subset-PTSans-Regular.eot);
-  src: local("PT Sans"), local("PTSans-Regular"),
-    url(fonts/subset-PTSans-Regular.eot?#iefix) format("embedded-opentype"),
-    url(fonts/subset-PTSans-Regular.woff2) format("woff2"),
-    url(fonts/subset-PTSans-Regular.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PT Sans Narrow";
-  src: url(fonts/subset-PTSans-Narrow.eot);
-  src: local("PT Sans Narrow"), local("PTSans-Narrow"),
-    url(fonts/subset-PTSans-Narrow.eot?#iefix) format("embedded-opentype"),
-    url(fonts/subset-PTSans-Narrow.woff2) format("woff2"),
-    url(fonts/subset-PTSans-Narrow.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PT Sans";
-  src: url(fonts/subset-PTSans-Bold.eot);
-  src: local("PT Sans Bold"), local("PTSans-Bold"),
-    url(fonts/subset-PTSans-Bold.eot?#iefix) format("embedded-opentype"),
-    url(fonts/subset-PTSans-Bold.woff2) format("woff2"),
-    url(fonts/subset-PTSans-Bold.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PT Sans Narrow";
-  src: url(fonts/subset-PTSans-NarrowBold.eot);
-  src: local("PT Sans Narrow Bold"), local("PTSans-NarrowBold"),
-    url(fonts/subset-PTSans-NarrowBold.eot?#iefix) format("embedded-opentype"),
-    url(fonts/subset-PTSans-NarrowBold.woff2) format("woff2"),
-    url(fonts/subset-PTSans-NarrowBold.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
 }
