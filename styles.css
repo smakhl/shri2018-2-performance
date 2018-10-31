@@ -237,7 +237,7 @@
 }
 
 .weather__item_cloud-drizzle {
-  background: url("assets/cloud-drizzle.png") 100% 70%/26px no-repeat;
+  background: url("assets/cloud-drizzle.webp") 100% 70%/26px no-repeat;
 }
 
 .main__info {
