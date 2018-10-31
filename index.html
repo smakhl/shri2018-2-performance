@@ -5,7 +5,399 @@
     <meta charset="utf-8">
     <title>Smarthome</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .logo {
+        display: inline-block;
+        width: 108px;
+        height: 27px;
+        position: relative;
+        background-image: url("./assets/logo.webp");
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: cover;
+        }
+
+        .logo__ya {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        outline: 0;
+        height: 100%;
+        width: 69px;
+        left: 0;
+        top: 0;
+        }
+
+        .logo__ya-sub {
+        display: block;
+        position: absolute;
+        z-index: 5;
+        outline: 0;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        }
+
+        .content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 29px;
+        }
+
+        .content__item {
+        width: 100%;
+        margin-bottom: 29px;
+        position: relative;
+        }
+
+        .content__item_half {
+        width: 49%;
+        }
+
+        .content__item_main {
+        padding-left: 40px;
+        }
+
+        .content__item_scenarios {
+        padding-right: 40px;
+        }
+
+        .content__item-header {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        }
+
+        .content__item-header_devices {
+        padding-left: 40px;
+        display: inline-block;
+        margin-right: 11px;
+        }
+
+        .link,
+        .link:active,
+        .link:visited {
+        color: rgba(51, 51, 51, 0.6);
+        }
+
+        .link {
+        text-decoration: none;
+        }
+
+        .link_active,
+        .link:hover {
+        color: inherit;
+        }
+
+        .menu {
+        margin-left: 52px;
+        }
+
+        .menu__icon {
+        display: none;
+        }
+
+        .menu__item {
+        margin-right: 27px;
+        font-size: 16px;
+        font-weight: 700;
+        }
+
+        .menu__list {
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        .header {
+        width: 100%;
+        height: 92px;
+        padding: 0 40px;
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        }
+
+        .page__wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        }
+
+        .page__wrapper-content {
+        flex: 1 0 auto;
+        }
+
+        .main__greeting {
+        font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-top: 6px;
+        font-size: 27px;
+        font-weight: 700;
+        }
+
+        .main {
+        height: 331px;
+        border-radius: 20px;
+        padding: 0 20px 0 25px;
+        display: flex;
+        justify-content: space-between;
+        background: url("assets/sh.webp") center center/cover no-repeat;
+        }
+
+        .main__weather {
+        margin-top: 25px;
+        }
+
+        .weather {
+        display: flex;
+        }
+
+        .weather__item {
+        margin-right: 18px;
+        }
+
+        .main__panel {
+        margin-bottom: 14px;
+        position: relative;
+        }
+
+        .panel {
+        padding: 14px;
+        min-height: 100px;
+        width: 200px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-shrink: 0;
+        background: #f7f7f7;
+        cursor: pointer;
+        transition: opacity 0.3s ease-out;
+        }
+
+        .panel:hover {
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+        }
+
+        .panel:active {
+        box-shadow: none;
+        }
+
+        .panel_device {
+        height: 120px;
+        }
+
+        .panel_first {
+        margin-top: 20px;
+        }
+
+        .panel__sub {
+        font-size: 12px;
+        color: #858585;
+        }
+
+        .panel__title {
+        font-weight: 700;
+        margin-bottom: 4px;
+        }
+
+        .main__upcoming {
+        width: 220px;
+        height: 100%;
+        overflow-y: scroll;
+        }
+
+        .main__upcoming-wrapper {
+        width: 200px;
+        height: 100%;
+        overflow: hidden;
+        }
+
+        .weather__item-title {
+        color: #858585;
+        margin-bottom: 4px;
+        }
+
+        .weather__item-temp {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.16;
+        font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .weather__item_outside {
+        padding-right: 31px;
+        }
+
+        .weather__item_cloud-drizzle {
+        background: url("assets/cloud-drizzle.webp") 100% 70%/26px no-repeat;
+        }
+
+        .main__info {
+        width: 61.585%;
+        padding-top: 20px;
+        padding-left: 20px;
+        background: rgba(255, 255, 255, 0.6);
+        }
+
+        .main__status {
+        margin-top: 6px;
+        line-height: 16px;
+        }
+
+        .filter__select {
+        display: none;
+        }
+
+        .filter__item-label {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 700;
+        background: #f7f7f7;
+        min-height: 30px;
+        padding: 8px 13px;
+        border-radius: 15px;
+        margin-right: 11px;
+        cursor: pointer;
+        }
+
+        .filter__item-label:hover {
+        background: #ffd93e;
+        }
+
+        .filter__item-radio {
+        display: none;
+        }
+
+        .filter__item-radio:checked + label {
+        background: #ffd93e;
+        }
+
+        .filter__item-radio_kitchen:checked ~ .devices .panel {
+        display: none;
+        }
+
+        .filter__item-radio_kitchen:checked ~ .devices .panel_kitchen {
+        display: flex;
+        }
+
+        .filter__item-radio_room:checked ~ .devices .panel {
+        display: none;
+        }
+
+        .filter__item-radio_room:checked ~ .devices .panel_room {
+        display: flex;
+        }
+
+        .filter__item-radio_lamp:checked ~ .devices .panel {
+        display: none;
+        }
+
+        .filter__item-radio_lamp:checked ~ .devices .panel_lamp {
+        display: flex;
+        }
+
+        .filter__item-radio_cam:checked ~ .devices .panel {
+        display: none;
+        }
+
+        .filter__item-radio_cam:checked ~ .devices .panel_cam {
+        display: flex;
+        }
+
+        .footer {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-left: 40px;
+        width: 100%;
+        height: 60px;
+        font-size: 12px;
+        }
+
+        .footer__link {
+        margin-right: 20px;
+        }
+
+        .panel__icon {
+        width: 24px;
+        height: 24px;
+        }
+
+        .paginator {
+        height: 16px;
+        width: 47px;
+        display: flex;
+        justify-content: space-between;
+        }
+
+        .paginator div {
+        width: 16px;
+        }
+
+        .paginator_hide {
+        display: none;
+        }
+
+        .paginator__arrow {
+        opacity: 1;
+        cursor: pointer;
+        }
+
+        .paginator__arrow:hover {
+        opacity: 0.5;
+        }
+
+        .paginator__arrow:active {
+        opacity: 0.3;
+        }
+
+        .paginator__arrow_disabled {
+        opacity: 0.3;
+        }
+
+        .devices__paginator {
+        position: absolute;
+        top: 0;
+        right: 40px;
+        }
+
+        .devices {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        padding: 20px 0 6px 40px;
+        }
+
+        .devices__panel {
+        margin-right: 15px;
+        }
+
+        .devices::after {
+        content: "";
+        display: inline-block;
+        min-width: 25px;
+        }
+
+    </style>
+    <link rel="preload" href="not-crit-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="./fonts/pt_sans.css">
+    </noscript>
 </head>
 
 <body class="page">
