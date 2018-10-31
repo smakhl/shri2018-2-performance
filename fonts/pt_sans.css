@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'PT Sans';
-	font-display: auto;
+	font-display: swap;
 	src: url('pts55f_w.eot');
 	src: local('PT Sans'), 
 		url('PTS55F_W.woff2') format('woff2'),
@@ -9,7 +9,7 @@
 
 @font-face {
 	font-family: 'PT Sans';
-	font-display: auto;
+	font-display: swap;
 	font-style: normal;
 	font-weight: bold;
 	src: local('PT Sans Bold'), 
@@ -20,7 +20,7 @@
 
 @font-face {
 	font-family: 'PT Sans Narrow';
-	font-display: auto;
+	font-display: swap;
 	src: local('PT Sans Narrow'), 
 		url('PTN57F_W.woff2') format('woff2'),
 		url('PTN57F_W.woff') format('woff'),
@@ -29,7 +29,7 @@
 
 @font-face {
 	font-family: 'PT Sans Narrow';
-	font-display: auto;
+	font-display: swap;
 	font-weight: bold;
 	src: local('PT Sans Narrow Bold'), 
 		url('PTN77F_W.woff2') format('woff2'),
