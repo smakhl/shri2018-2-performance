@@ -194,10 +194,6 @@
   margin-top: 20px;
 }
 
-.panel_last {
-  margin-bottom: 20px;
-}
-
 .panel__sub {
   font-size: 12px;
   color: #858585;
@@ -698,7 +694,4 @@ html {
   position: absolute;
   top: 0;
   right: 40px;
-}
-.scenarios_hide {
-  display: none;
 }
